@@ -6,12 +6,12 @@ import { getPokemons } from "./actions/pokemons"
 
 import './assets/styles/styles.scss'
 import Spinner from "./components/UI/Spinner"
+import Pokemons from "./components/Pokemons"
 
 const App = () => {
 
-  const dispatch = useDispatch();
-  const { pokemons } = useSelector(state => state.pokemons);
-  const { loading } = useSelector(state => state.ui);
+  const dispatch = useDispatch()
+  const { loading } = useSelector(state => state.ui)
 
   useEffect(() => {
 
@@ -19,14 +19,17 @@ const App = () => {
 
   }, [dispatch])
 
-  console.log(pokemons)
-
   return (
     <div>
       {
         loading
           ? <Spinner />
-          : <Menu />
+          : (
+              <>
+                <Menu />
+                <Pokemons/>
+              </>
+            )
       }
     </div>
   )
