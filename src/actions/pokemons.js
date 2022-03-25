@@ -32,3 +32,8 @@ export const getPokemons = () => {
       })
   }
 }
+
+export const setViewPokemons = (view) => ({
+  type: types.viewGallery,
+  payload: view
+});

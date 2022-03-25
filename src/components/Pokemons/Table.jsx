@@ -9,23 +9,27 @@ const Table = () => {
 
   return (
     <table className="table">
-      <tr className="table__head">
+      <thead className="table__head">
+        <tr>
+          {
+            HEADERS_TABLE.map((item, index) => (
+              <th key={index} className="table__head-row">{item}</th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
         {
-          HEADERS_TABLE.map((item, index) => (
-            <th key={index} className="table__head-row">{item}</th>
+          pokemons.map(pokemon => (
+            <tr key={pokemon.data.id} className='table__body'>
+              <td className="table__body-row">{pokemon.data.id}</td>
+              <td className="table__body-row pointer">{pokemon.data.name}</td>
+              <td className="table__body-row">{pokemon.data.height} ft</td>
+              <td className="table__body-row">{pokemon.data.weight} kg</td>
+            </tr>
           ))
         }
-      </tr>
-      {
-        pokemons.map(pokemon => (
-          <tr key={pokemon.data.id} className='table__body'>
-            <td className="table__body-row">{pokemon.data.id}</td>
-            <td className="table__body-row">{pokemon.data.name}</td>
-            <td className="table__body-row">{pokemon.data.height}</td>
-            <td className="table__body-row">{pokemon.data.weight}</td>
-          </tr>
-        ))
-      }
+      </tbody>
     </table>
   )
 }

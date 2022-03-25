@@ -1,5 +1,6 @@
 export const types = {
 
+  viewGallery: '[pokemon} Set view to gallery',
   pokemonSetActive: '[pokemon] Set Active',
   getPokemons: '[pokemon] Get pokemons',
 

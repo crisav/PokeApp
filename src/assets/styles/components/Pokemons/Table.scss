@@ -1,5 +1,5 @@
 .table {
-  width: 70%;
+  width: 100%;
   text-align: center;
   border-collapse:collapse;
   border: none;
@@ -15,8 +15,16 @@
     }
   }
 
-  &__body-row {
-    font-size: 2rem;
-    border: 1px solid $primary-color;
+  &__body {
+
+    &-row {
+      font-size: 2rem;
+      border: 1px solid $primary-color;
+    }
+
+    .pointer {
+      cursor: pointer;
+    }
   }
+
 }

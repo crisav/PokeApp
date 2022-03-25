@@ -4,7 +4,7 @@ import GalleryCard from "./GalleryCard";
 const Gallery = () => {
   const { pokemons } = useSelector(state => state.pokemons);
 
-  console.log(pokemons)
+  // console.log(pokemons)
 
   return (
     <div className="gallery">

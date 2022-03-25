@@ -2,9 +2,11 @@ import React from 'react'
 
 const GalleryCard = ({image, name}) => {
   return (
-    <div className=''>
-      <img src={image} alt={name} />
-      <p>{name}</p>
+    <div className='gallery-card'>
+      <figure className='gallery-card__container'>
+        <img className='gallery-card__container-image' src={image} alt={name} />
+      </figure>
+      <p className='gallery-card__name'>{name}</p>
     </div>
   )
 }

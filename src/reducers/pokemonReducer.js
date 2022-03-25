@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
   pokemons: [],
+  viewGallery: true,
   activePokemon: null
 }
 
@@ -17,7 +18,13 @@ export const pokemonReducer = (state = initialState, action) => {
     case types.pokemonSetActive:
       return {
         ...state,
-        activeEvent: action.payload
+        activePokemon: action.payload
+      }
+
+    case types.viewGallery:
+      return {
+        ...state,
+        viewGallery: action.payload
       }
 
     default:
