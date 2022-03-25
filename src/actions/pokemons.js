@@ -1,15 +1,15 @@
-import axios from "axios";
-import Swal from 'sweetalert2';
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
-import { types } from "../types/types";
-import { finishLoading, startLoading } from "./ui";
+import { types } from '../types/types'
+import { finishLoading, startLoading } from './ui'
 
 const URL = 'https://pokeapi.co/api/v2/pokemon?limit=150'
 
 export const getPokemons = () => {
   return (dispatch) => {
 
-    dispatch( startLoading() );
+    dispatch( startLoading() )
 
     axios
       .get(URL)
@@ -26,9 +26,9 @@ export const getPokemons = () => {
         dispatch( finishLoading() )
       })
       .catch( e => {
-        console.log(e);
-        dispatch( finishLoading() );
-        Swal.fire('Error', e.message, 'error');
+        console.log(e)
+        dispatch( finishLoading() )
+        Swal.fire('Error', e.message, 'error')
       })
   }
 }
@@ -37,3 +37,8 @@ export const setViewPokemons = (view) => ({
   type: types.viewGallery,
   payload: view
 });
+
+export const setActivePokemon = ( pokemon ) => ({
+  type: types.pokemonSetActive,
+  payload: pokemon
+})

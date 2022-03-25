@@ -1,12 +1,12 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Menu from "./components/Menu"
-import { getPokemons } from "./actions/pokemons"
+import Menu from './components/Menu'
+import { getPokemons } from './actions/pokemons'
 
 import './assets/styles/styles.scss'
-import Spinner from "./components/UI/Spinner"
-import Pokemons from "./components/Pokemons"
+import Spinner from './components/UI/Spinner'
+import Pokemons from './components/Pokemons'
 
 const App = () => {
 
