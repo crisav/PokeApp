@@ -1,13 +1,12 @@
-import { Provider } from "react-redux"
-import { store } from "./store/store"
+import Menu from "./components/Menu"
 
-Provider
+import './assets/styles/styles.scss'
 
-function App() {
+const App = () => {
   return (
-    <Provider store={store}>
-      <h1>Hola Mundo!!!</h1>
-    </Provider>
+    <div>
+      <Menu />
+    </div>
   )
 }
 

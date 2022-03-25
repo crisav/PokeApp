@@ -1,0 +1,13 @@
+.menu{
+  border: 3px solid red;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+
+
+  &__logo {
+      height: 5rem;
+  }
+}
