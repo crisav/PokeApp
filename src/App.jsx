@@ -1,29 +1,26 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+
 import Menu from "./components/Menu"
+import { getPokemons } from "./actions/pokemons"
 
 import './assets/styles/styles.scss'
-import axios from "axios"
 
-const URL = 'https://pokeapi.co/api/v2/pokemon?limit=150'
-// const URL = 'https://pokeapi.co/api/v2/pokemon/1/'
+// const URL = 'https://pokeapi.co/api/v2/pokemon?limit=150'
+// // const URL = 'https://pokeapi.co/api/v2/pokemon/1/'
 
 const App = () => {
-  const [data, setData] = useState({})
+
+  const dispatch = useDispatch();
+  const { pokemons } = useSelector(state => state.pokemons);
 
   useEffect(() => {
-    axios
-    .get(URL)
-    .then((response) => response.data)
-    .then(data => {
-      const pokemonList = data.results
-      return Promise.all(pokemonList.map(pokemon => axios.get(pokemon.url)))
-    })
-    .then( pokemonData => setData(pokemonData) )
-    .catch((error) => console.log(error));
 
-  }, [])
+      dispatch( getPokemons() );
 
-  console.log('esta es la data: ', data)
+  }, [dispatch])
+
+  console.log(pokemons)
 
   return (
     <div>
