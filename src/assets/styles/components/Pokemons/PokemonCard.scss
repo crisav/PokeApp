@@ -1,0 +1,45 @@
+.pokemon-card {
+  height: 80vh;
+  width: 25%;
+  position: fixed;
+  right: 5rem;
+  border: 2px solid $primary-color;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  &__image {
+    height: 50%;
+    display: grid;
+    place-content: center;
+
+    img {
+      height: 20rem;
+    }
+  }
+
+  &__details {
+    display: grid;
+    justify-content: space-evenly;
+    height: 50%;
+    background-color: darken($color: $white-color, $amount: 10);
+
+    &-name {
+      font-size: 3rem;
+    }
+
+    &-characteristic {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    &-list {
+      list-style: none;
+
+      &-item {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+}

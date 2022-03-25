@@ -1,0 +1,18 @@
+.pokemons {
+  padding: 0 5rem;
+  text-align: center;
+  height: calc(100vh - 12vh);
+  overflow-y: scroll;
+  position: relative;
+
+  &__title {
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: $primary-color;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+}
