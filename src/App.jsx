@@ -5,14 +5,13 @@ import Menu from "./components/Menu"
 import { getPokemons } from "./actions/pokemons"
 
 import './assets/styles/styles.scss'
-
-// const URL = 'https://pokeapi.co/api/v2/pokemon?limit=150'
-// // const URL = 'https://pokeapi.co/api/v2/pokemon/1/'
+import Spinner from "./components/UI/Spinner"
 
 const App = () => {
 
   const dispatch = useDispatch();
   const { pokemons } = useSelector(state => state.pokemons);
+  const { loading } = useSelector(state => state.ui);
 
   useEffect(() => {
 
@@ -24,7 +23,11 @@ const App = () => {
 
   return (
     <div>
-      <Menu />
+      {
+        loading
+          ? <Spinner />
+          : <Menu />
+      }
     </div>
   )
 }
