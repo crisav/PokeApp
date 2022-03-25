@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MenuItem = () => {
+const MenuItem = ({ children }) => {
   return (
-    <div>MenuItem</div>
+    <p className='menu__navbar-item'>{children}</p>
   )
 }
 
